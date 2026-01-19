@@ -159,7 +159,7 @@ const Login: React.FC<Props> = ({ onLogin, theme }) => {
         </div>
       </div>
       <p className="mt-12 text-slate-400 dark:text-slate-600 text-[10px] font-black uppercase tracking-[0.3em] opacity-80">
-        © 2026 SWEET LIVE BAKERY SYSTEM
+        © 2026 SWEET LIVE BAKERY SYSTEM, Copyright MD SHAMIM 
       </p>
     </div>
   );
