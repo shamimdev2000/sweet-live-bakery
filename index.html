@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#F26711">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Sweet Live">
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3014/3014436.png">
+    <link rel="manifest" href="/manifest.json">
+    
+    <title>Sweet Live Bakery - Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+          darkMode: 'class',
+          theme: {
+            extend: {
+              colors: {
+                orange: {
+                  50: '#fff7ed',
+                  100: '#ffedd5',
+                  200: '#fed7aa',
+                  300: '#fdba74',
+                  400: '#fb923c',
+                  500: '#F26711',
+                  600: '#ea580c',
+                  700: '#c2410c',
+                  800: '#9a3412',
+                  900: '#7c2d12',
+                },
+                dark: {
+                  bg: '#0a1120',
+                  card: '#161d31',
+                  border: '#1e293b'
+                }
+              },
+              screens: {
+                'xs': '400px',
+              }
+            }
+          }
+        }
+    </script>
+    <style>
+        body { 
+          font-family: 'Inter', sans-serif;
+          transition: background-color 0.3s ease, color 0.3s ease;
+          -webkit-tap-highlight-color: transparent;
+          overscroll-behavior-y: contain;
+        }
+        /* Smooth transitions for all themeable elements */
+        * {
+          transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+          width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+          background: #1e293b;
+          border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+          background: #e2e8f0;
+          border-radius: 10px;
+        }
+
+        /* Hide Number Input Spinners (Increment/Decrement Arrows) */
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+          -moz-appearance: textfield;
+        }
+
+        /* Mobile Optimization for Touch */
+        button, a {
+          touch-action: manipulation;
+        }
+
+        @media (max-width: 1024px) {
+          main {
+            margin-left: 0 !important;
+          }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.35.0",
+    "recharts": "https://esm.sh/recharts@^3.6.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100">
+    <div id="root"></div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').then(registration => {
+            console.log('SW registered:', registration);
+          }).catch(error => {
+            console.log('SW registration failed:', error);
+          });
+        });
+      }
+    </script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
